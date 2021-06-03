@@ -4,18 +4,13 @@ services:
   dev:
     build: ./dev
     volumes:
-      - type: volume
-        soutce: mydata
-        target: /usr/local/tomcat/webapp
-        volume:
-          noncopy: true
+      - "mydata:/usr/local/tomcat/webapp"
 
   prod:
-    image: tomcat:9-jdk11-openjdk-slim
+    image: tomcat:9
     volumes:
       - "mydata:/usr/local/tomcat/webapp"
     ports:
       - "8080:8080"
-
 volumes:
   mydata:
