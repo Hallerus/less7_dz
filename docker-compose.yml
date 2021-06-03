@@ -1,0 +1,17 @@
+version: "3"
+services:
+
+  dev:
+    build: ./dev
+    volumes:
+      - mydata:/usr/local/tomcat/webapp
+
+  prod:
+    image: tomcat:9-jdk11-openjdk-slim
+    volumes:
+      - mydata:/usr/local/tomcat/webapp
+    ports:
+      - "8080:8080"
+
+volumes:
+  mydata:
