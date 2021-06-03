@@ -6,5 +6,3 @@ RUN apt-get update && \
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git /tmp/boxfuse/
 WORKDIR /tmp/boxfuse/
 RUN mvn package
-WORKDIR /usr/local/tomcat/webapp
-RUN cp /tmp/boxfuse/target/hello-1.0.war .

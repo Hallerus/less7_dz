@@ -4,13 +4,17 @@ services:
   dev:
     build: ./dev
     volumes:
-      - "mydata:/usr/local/tomcat/webapp"
+      - "mydata:/tmp/boxfuse"
 
   prod:
     image: tomcat:9
     volumes:
-      - "mydata:/usr/local/tomcat/webapp"
+      - "mydata:/tmp/boxfuse"
     ports:
       - "8080:8080"
+    command: >
+      bash -c  "cp /tmp/boxfuse/target/hello-1.0.war $CATALINA_HOME/webapps/
+      && catalina.sh run"
+
 volumes:
   mydata:
