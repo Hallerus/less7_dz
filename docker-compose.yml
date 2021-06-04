@@ -4,12 +4,12 @@ services:
   dev:
     build: ./dev
     volumes:
-      - "mydata:/opt/boxfuse"
+      - "mydata:/opt/boxfuse/target/"
 
   prod:
     build: ./prod
     volumes:
-      - "mydata:/opt/tomcat/webapp"
+      - "mydata:/opt/tomcat/webapps/"
     ports:
       - "8080:8080"
     depends_on:
