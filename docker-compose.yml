@@ -4,7 +4,7 @@ services:
   dev:
     build: ./dev
     volumes:
-      - "mydata:/tmp/boxfuse"
+      - "mydata:/opt/boxfuse"
 
   prod:
     build: ./prod
@@ -17,3 +17,4 @@ services:
 
 volumes:
   mydata:
+
